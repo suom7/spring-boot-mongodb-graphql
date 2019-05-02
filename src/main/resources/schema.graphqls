@@ -1,0 +1,24 @@
+schema {
+    query : Query
+}
+
+type Query {
+    allAuthorArticles(authorId: String): [Article]
+    author(id: String): Author
+    authors: [Author]
+}
+
+type Author {
+    id: String
+    name: String
+    age: Int
+    nationality: String
+    createdAt: String @deprecated
+    articles: [Article]
+}
+
+type Article {
+    id: String
+    title: String
+    minutesRead: Int
+}
